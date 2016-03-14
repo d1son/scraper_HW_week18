@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/d1son/scraper_HW_week18/issues"
   },
-  "homepage": "https://github.com/d1son/scraper_HW_week18#readme"
+  "homepage": "https://github.com/d1son/scraper_HW_week18#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cheerio": "^0.20.0",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.4.7",
+    "request": "^2.69.0"
+  }
 }
