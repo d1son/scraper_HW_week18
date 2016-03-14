@@ -18,15 +18,15 @@ var PORT = process.env.PORT || 3000;
 
 // Handlebar Layouts
 
-app.engine('handlebars', expressHandlebars({
-  defaultLayout: 'main'
-}));
+// app.engine('handlebars', expressHandlebars({
+//   defaultLayout: 'main'
+// }));
 
-app.set('view engine', 'handlebars');
+// app.set('view engine', 'handlebars');
 
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+// app.use(bodyParser.urlencoded({
+//   extended: false
+// }));
 
 // Route to Public Folder
 
@@ -49,10 +49,10 @@ app.use(express.static("public"));
 // })
 
 app.get("/", function(req,res) {
-	res.send("Hello");
+	res.send(index.html);
 })
 
-app.get("/animals", function(req,res) {
+app.get("/all", function(req,res) {
 	db.animals.find({}, function(err, records) {
 		if(err){
 			console.log(err);
@@ -71,6 +71,18 @@ app.get("/weight", function(req,res) {
 		}
 	})
 })
+
+app.get("/name", function(req,res) {
+	db.animals.find().sort({name: 1}, function(err, records) { 
+		if(err){
+			console.log(err);
+		} else {
+			res.json(records);
+		}
+	})
+})
+
+
 
 
 app.listen(PORT, function(){

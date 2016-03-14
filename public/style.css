@@ -1,0 +1,27 @@
+table, td {
+	border: 1px solid black;
+}
+
+td {
+	padding: 15px;
+	text-align: center;
+}
+
+button {
+	width: 250px;
+	height: 50px;
+	margin: 20px 0;
+}
+
+#active {
+	color: red;
+}
+
+table {
+	backgroud-color: antiquewhite;
+	width: 500px;
+}
+
+body {
+	background-color: #6A5;
+}
