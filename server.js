@@ -62,6 +62,17 @@ app.get("/animals", function(req,res) {
 	})
 })
 
+app.get("/weight", function(req,res) {
+	db.animals.find().sort({weight: 1}, function(err, records) { //this sorts the animals by weight from least to greatest
+		if(err){
+			console.log(err);
+		} else {
+			res.json(records);
+		}
+	})
+})
+
+
 app.listen(PORT, function(){
   console.log("Server listening on " + PORT);
 });
